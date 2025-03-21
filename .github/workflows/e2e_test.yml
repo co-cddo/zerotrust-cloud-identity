@@ -41,8 +41,9 @@ jobs:
 
       - name: Upload Videos
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: videos
           path: e2e_test/videos
           retention-days: 1
+          compression-level: 0
