@@ -98,7 +98,7 @@ jobs:
     permissions:
       contents: read
       packages: write
-    needs: [discover, docker_build]
+    needs: [discover]
     runs-on: ubuntu-latest
     strategy:
       matrix:
