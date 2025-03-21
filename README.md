@@ -16,7 +16,7 @@ We will be using [Terraform](https://www.terraform.io/) for this, and providers 
 ## Tests
 
 Tests are provided, to prove everything works, and continues to work.
-There are some stubs of tests created by GDS to kick things off and written in GHERKIN so that they can be written in plain english and the providers can create the necessary implementation to prove that it works
+There are some stubs of tests created by GDS to kick things off and written in [cucumber-js](https://cucumber.io/docs/guides/overview) so that they can be written in plain english and the providers can create the necessary implementation to prove that it works in typescript
 
 ## Workload app
 There is a simple workload app stub in this repository that can function as a starting point for the providers to build their own workload app, we expect all apps to be written in Typescript and include local unit tests with sufficient coverage to prove the app is working in isolation.
@@ -24,7 +24,7 @@ There is a simple workload app stub in this repository that can function as a st
 
 ## Levels
 
-### Level 1 
+### [Level 1](e2e_test/features/level1.feature)
 
 ```mermaid
 sequenceDiagram
@@ -33,13 +33,7 @@ sequenceDiagram
   CloudControlPlaneConsole ->> Human: 200 OK "hello Human"
 ```
 
-```gherkin
-As a User 
-I want to login to the console
-So that I can I can interact with the cloud provider
-```
-
-### Level 2
+### [Level 2](e2e_test/features/level2.feature)
 
 ```mermaid
 sequenceDiagram
@@ -59,15 +53,11 @@ sequenceDiagram
   deactivate CloudControlPlaneAPI
 ```
 
-```gherkin
-As a Continious Deployment runner
-I want to use my workload identity to access the cloud
-So that I can deploy to the cloud
-```
+---
+> 🎉 BOOTSTRAP COMPLETE 🎉
+---
 
-> BOOTSTRAP COMPLETE 🎉
-
-### Level 3
+### [Level 3](e2e_test/features/level3.feature)
 
 ```mermaid
 sequenceDiagram
@@ -78,12 +68,8 @@ sequenceDiagram
   DeployedWorkload ->> Human: 200 OK (based on human identity)
 ```
 
-```gherkin
-As a Human
-...
-```
 
-### Level 4
+### [Level 4](e2e_test/features/level4.feature)
 
 ```mermaid
 sequenceDiagram
@@ -97,12 +83,7 @@ sequenceDiagram
   DeployedWorkload ->> Human: 200 OK (based on human identity)
 ```
 
-```gherkin
-As a Human
-...
-```
-
-### Level 5
+### [Level 5](e2e_test/features/level5.feature)
 
 ```mermaid
 sequenceDiagram
@@ -116,12 +97,8 @@ sequenceDiagram
   DeployedWorkload ->> Human: 200 OK (based on human identity)
 ```
 
-```gherkin
-As a Human
-...
-```
 
-### Level 6
+### [Level 6](e2e_test/features/level6.feature)
 
 ```mermaid
 sequenceDiagram
@@ -135,12 +112,7 @@ sequenceDiagram
   DeployedWorkload ->> Human: 200 OK (based on human identity)
 ```
 
-```gherkin
-As a Human
-...
-```
-
-### Level 7
+### [Level 7](e2e_test/features/level7.feature)
 
 ```mermaid
 sequenceDiagram
@@ -156,12 +128,7 @@ sequenceDiagram
   DeployedWorkload ->> Human: 200 OK
 ```
 
-```gherkin
-As a Human
-...
-```
-
-### Level 8
+### [Level 8](e2e_test/features/level8.feature)
 
 ```mermaid
 sequenceDiagram
@@ -177,12 +144,7 @@ sequenceDiagram
   DeployedWorkload ->> Human: 200 OK
 ```
 
-```gherkin
-As a Human
-...
-```
-
-### Level 9
+### [Level 9](e2e_test/features/level9.feature)
 
 ```mermaid
 sequenceDiagram
@@ -198,13 +160,8 @@ sequenceDiagram
   DeployedWorkload ->> Human: 200 OK
 ```
 
-```gherkin
-As a Human
-...
-```
 
-
-### Level 10
+### [Level 10](e2e_test/features/level10.feature)
 
 ```mermaid
 sequenceDiagram
@@ -219,13 +176,7 @@ sequenceDiagram
   DeployedWorkload1 ->> DeployedWorkload0: 200 OK "hello DeployedWorkload0"
 ```
 
-```gherkin
-As a Human
-...
-```
-
-
-### Level 11
+### [Level 11](e2e_test/features/level11.feature)
 
 ```mermaid
 sequenceDiagram
@@ -239,9 +190,4 @@ sequenceDiagram
   DeployedWorkload0 ->> DeployedWorkload1: GET /
   DeployedWorkload1 ->> DeployedWorkload0: 200 OK "hello Human via DeployedWorkload0"
   DeployedWorkload0 ->> Human: 200 OK "hello Human"
-```
-
-```gherkin
-As a Human
-...
 ```
