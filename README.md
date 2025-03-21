@@ -7,18 +7,18 @@ GDS invited a number of providers to come together collaboratively in our office
 
 The initial day was set out in [Levels](#levels) to game-ify and provide a easy way to create tests, and measure how everyone was getting on, these levels are useful to clearly show the capability achieved too.
 
-## Infrastructure as code
+## [Infrastructure as code](./iac/)
 
 Everything must be Infrastructure as code, where any bootstrap [ClickOps](https://en.wiktionary.org/wiki/ClickOps) is necessary, providers MUST document this, including full screenshots, and where possible backfill this with Infrastructure as code implementation to at least show drift detection.
 
 We will be using [Terraform](https://www.terraform.io/) for this, and providers should provide examples of how to do this for their domain, this allows us to use the same tooling to bootstrap and test the implementation without having to learn new tooling to just understand what is going on.
 
-## Tests
+## [Tests](./e2e_test/)
 
 Tests are provided, to prove everything works, and continues to work.
 There are some stubs of tests created by GDS to kick things off and written in [cucumber-js](https://cucumber.io/docs/guides/overview) so that they can be written in plain english and the providers can create the necessary implementation to prove that it works in typescript
 
-## Workload app
+## [Workload app](./workload/)
 There is a simple workload app stub in this repository that can function as a starting point for the providers to build their own workload app, we expect all apps to be written in Typescript and include local unit tests with sufficient coverage to prove the app is working in isolation.
 
 
