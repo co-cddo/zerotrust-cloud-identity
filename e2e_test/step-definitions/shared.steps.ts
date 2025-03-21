@@ -1,7 +1,6 @@
 import { Before, Given, After } from '@cucumber/cucumber';
 import { chromium, Browser, Page, BrowserContext } from 'playwright';
 
-export let browser: Browser;
 export let page: Page;
 export let context: BrowserContext;
 // export let after: After;
