@@ -1,2 +1,5 @@
 workload/*/node_modules
 workload/*/coverage
+e2e_test/node_modules
+e2e_test/cucumber-report*
+e2e_test/videos/*

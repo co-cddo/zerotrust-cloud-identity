@@ -1,0 +1,50 @@
+name: E2E CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest    
+    permissions:
+      checks: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: 'e2e_test/.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: 'e2e_test/package.json'
+      
+      - name: Install dependencies
+        run: npm install
+        working-directory: e2e_test
+        
+      - name: Run tests
+        run: xvfb-run npm test
+        working-directory: e2e_test
+      
+      - name: Publish Test Results
+        if: always()
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        with:
+          files: |
+            e2e_test/cucumber-report.xml
+
+      - name: Upload Videos
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: videos
+          path: e2e_test/videos/*
+          retention-days: 1
+          compression-level: 0

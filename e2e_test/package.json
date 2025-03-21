@@ -1,0 +1,20 @@
+{
+  "name": "e2e_test",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "start": "cucumber-js",
+    "test": "npm start"
+  },
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "@cucumber/cucumber": "^11.2.0",
+    "@playwright/browser-chromium": "^1.51.1",
+    "@types/node": "^22.13.11",
+    "playwright": "^1.51.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  }
+}
