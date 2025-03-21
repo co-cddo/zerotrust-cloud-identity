@@ -84,20 +84,13 @@ jobs:
           context: workload/${{ matrix.workload }}
           load: true
           push: false
+          tags: user/app:latest
+
           
-      - name: Test
-        run: |
-          # Run the container
-          docker run -d --name test-container -e PORT=8080 -p 8080:8080 ${{ steps.build.outputs.imageid}}
-          
-          # Wait for container to start
-          sleep 5
-          
-          # Test the API
-          curl -s --retry 5 --retry-connrefused http://localhost:$PORT/
-          
-          # Cleanup
-          docker stop test-container
+      - run: docker run -d --name test-container -e PORT=8080 -p 8080:8080 ${{ steps.build.outputs.imageid}}
+      - run: sleep 5
+      - run: curl -s --retry 5 --retry-connrefused http://localhost:8080/
+      - run: docker stop test-container
 
 
   docker_push:
@@ -138,6 +131,7 @@ jobs:
         uses: docker/build-push-action@v6
         id: build
         with:
+          platforms: linux/amd64,linux/arm64
           context: workload/${{ matrix.workload }}
           load: true
           push: false
