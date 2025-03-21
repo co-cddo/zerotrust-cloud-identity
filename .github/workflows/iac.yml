@@ -1,0 +1,40 @@
+name: IaC
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+
+  check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: iac
+    steps:
+      - uses: actions/checkout@v3
+      
+      - uses: hashicorp/setup-terraform@v3
+      - run: terraform fmt -check
+      - run: terraform init -input=false
+      - run: terraform validate -no-color
+      - run: terraform plan  -no-color -input=false
+
+# TODO give access to secrets 
+  apply:
+    needs: check
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    defaults:
+      run:
+        working-directory: iac
+    steps:
+        - uses: actions/checkout@v3
+        - uses: hashicorp/setup-terraform@v3
+        - run: terraform apply -auto-approve
+        # TODO need to put the state somewhere
