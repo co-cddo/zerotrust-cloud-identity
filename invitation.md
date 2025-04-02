@@ -4,7 +4,7 @@
 
 **Hey there, cloud engineers!** 👋
 
-We're excited to invite you to join us for a one-day hackathon at GDS on **__th May** at the **Whitechapel Building, London**. This isn't your typical vendor event – it's a hands-on, collaborative coding day where your technical team will work alongside engineers from other cloud providers to build something genuinely valuable.
+We're excited to invite you to join us for a one-day hackathon at GDS on **__th May** at the [**Whitechapel Building, London**](https://thewhitechapelbuilding.london/). This isn't your typical vendor event – it's a hands-on, collaborative coding day where your technical team will work alongside engineers from other cloud providers to build something genuinely valuable.
 
 ## What's the deal?
 We're creating an open-source proof of capability demonstrating cross-cloud identity federation in a zero trust environment. No long-lived credentials or API keys. No multiple logins. Just elegant, secure, portable solutions.
