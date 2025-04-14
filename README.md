@@ -61,6 +61,7 @@ sequenceDiagram
 
 ```mermaid
 sequenceDiagram
+  actor Human
   Human ->> DeployedWorkload: GET /
   box provider0
   participant DeployedWorkload
@@ -73,6 +74,7 @@ sequenceDiagram
 
 ```mermaid
 sequenceDiagram
+  actor Human
   Human ->> DeployedWorkload: GET /
   box provider0
   participant DeployedWorkload
@@ -87,6 +89,7 @@ sequenceDiagram
 
 ```mermaid
 sequenceDiagram
+  actor Human
   Human ->> DeployedWorkload: GET /
   box provider0
   participant DeployedWorkload
@@ -102,6 +105,7 @@ sequenceDiagram
 
 ```mermaid
 sequenceDiagram
+  actor Human
   Human ->> DeployedWorkload: GET /
   box provider0
   participant DeployedWorkload
@@ -116,6 +120,7 @@ sequenceDiagram
 
 ```mermaid
 sequenceDiagram
+  actor Human
   Human ->> DeployedWorkload: GET /
   box provider0
   participant DeployedWorkload
@@ -132,6 +137,7 @@ sequenceDiagram
 
 ```mermaid
 sequenceDiagram
+  actor Human
   Human ->> DeployedWorkload: GET /
   box provider0
   participant DeployedWorkload
@@ -148,6 +154,7 @@ sequenceDiagram
 
 ```mermaid
 sequenceDiagram
+  actor Human
   Human ->> DeployedWorkload: GET /
   box provider0
   participant DeployedWorkload
@@ -165,6 +172,7 @@ sequenceDiagram
 
 ```mermaid
 sequenceDiagram
+  actor Human
   Human ->> DeployedWorkload0: GET /
   box provider0
   participant DeployedWorkload0
@@ -180,6 +188,7 @@ sequenceDiagram
 
 ```mermaid
 sequenceDiagram
+  actor Human
   Human ->> DeployedWorkload0: GET /
   box provider0
   participant DeployedWorkload0
