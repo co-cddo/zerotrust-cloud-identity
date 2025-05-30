@@ -1,9 +1,9 @@
-workload1: 
-  provider: example
-  host: example.com
+GDS_App1: 
+  provider: GoogleCloud
+  host: https://storage.cloud.google.com/gds-workload/GCP1.png
   type: workload
   
-workload2: 
-  provider: example
-  host: workload.example.com
+GDS_app2: 
+  provider: GoogleCloud
+  host: https://storage.cloud.google.com/gds-workload/GCP2.png
   type: workload

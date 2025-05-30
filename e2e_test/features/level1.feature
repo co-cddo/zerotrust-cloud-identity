@@ -7,4 +7,4 @@ Feature: Level 1
 
     Examples:
       | provider  |
-      | provider1 |
+      | googlecloud |

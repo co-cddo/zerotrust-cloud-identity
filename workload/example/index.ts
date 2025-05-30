@@ -26,7 +26,7 @@ interface ProviderMap {
 // Function to fetch and parse the YAML configuration
 export async function fetchConfig() {
   try {
-    const response = await axios.get('https://raw.githubusercontent.com/co-cddo/zerotrust-cloud-identity/refs/heads/main/shared_config/hosts.yaml')
+    const response = await axios.get('https://github.com/rsg98/zerotrust-cloud-identity/blob/main/shared_config/hosts.yaml')
     const yamlData = response.data
     const jsonConfig = yaml.load(yamlData) as HostsConfig
     console.log('Configuration loaded successfully')
@@ -49,7 +49,7 @@ let server: any
 
 // Define providers for different types of workloads
 export const Providers: ProviderMap = {
-  example: async (req: Request, res: Response) => {
+  GoogleCloud: async (req: Request, res: Response) => {
     await forwardRequest(req, res, hostsConfig);
   }
 }
